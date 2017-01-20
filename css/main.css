@@ -1,0 +1,24 @@
+*{
+    outline: 1px solid rgba(0,255,0,0.3);
+}
+.lista {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: inline-block;
+}
+.lista li {
+    background-color: #7177;
+    padding: 15px;
+    display: block;
+    margin: 0 0 5px 0;
+    text-decoration: none;
+}
+li span{
+    padding-left: 10px;
+}
+.checked{
+   text-decoration: line-through;
+    font-weight: bold;
+    color: #c91010;
+}
