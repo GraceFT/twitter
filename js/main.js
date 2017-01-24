@@ -1,54 +1,52 @@
-var totalItems = 0;
-var button = document.getElementById("agregar");
-button.onclick= function(){
-    var tarea= document.getElementById("tarea").value;
-    addtarea(document.getElementById("lista"),tarea);}
+var  tarea = document.getElementById("tarea");
+var  button = document.getElementById("agregar");
+var lista = document.getElementById("lista");
 
-function addtarea(lista,tarea){
-    totalItems++;
-    if (tarea==="" ||!tarea){
-        return false;
-    }else{
-        var listItem= document.createElement("li");
-        listItem.id="element"+totalItems;
-        listItem.classList.add("col-md-10");
-        
-        var checkBox= document.createElement("input");
-        checkBox.type= "checkbox";
-        checkBox.id = "box";
-        checkBox.onclick= checkedStatus;
-        
-        var span = document.createElement("span");
-        span.id="item"+ totalItems;
-        span.innerHTML = tarea;
-        
-        var icon = document.createElement("button");
-        icon.innerHTML="Aun";
-        icon.style.float="right";
-        icon.onclick= deleteText;
-        
-        listItem.appendChild(icon);
-        listItem.appendChild(checkBox);
-        listItem.appendChild(span);
-        lista.appendChild(listItem);
-    }
+button.addEventListener("click", clickAgregar);
+
+function clickAgregar(event){
+  if (tarea.value===""||!tarea.value){
+      return false;
+  }else{
+      return addTarea();
+  }
 }
-function checkedStatus(){
-    var box = this.id.replace("box","");
-    var tarea=document.getElementById("item"+ box);
+function addTarea(){
+ 
+    var listItem= document.createElement("div");
+    listItem.classList.add("tareas");
     
-    if (this.checked){
-        tarea.style.textDecoration="line-through";
-        tarea.style.color= "#bf1a1a";
-        tarea.style.fontWeight="bold";
+    var checkBox= document.createElement("input");
+    checkBox.type= "checkbox";
+    checkBox.classList.add("check");
         
+    var borrar = document.createElement("span");
+    borrar.innerHTML="<i class='fa fa-trash tachito'></i>";
+    borrar.classList.add("tachito");
+    
+    var span = document.createElement("span");
+    span.innerHTML = tarea.value;
+    listItem.appendChild(checkBox);
+    listItem.appendChild(span);
+    listItem.appendChild(borrar);
+    lista.appendChild(listItem);
+    tarea.value = "";
+    tarea.focus();
+    
+    borrar.addEventListener('click',ondeleteItem);
+    checkBox.addEventListener('click',checkStatus);
+}
+function ondeleteItem(evt){
+    var lista = evt.target.parentNode.parentNode.parentNode;
+    lista.removeChild( evt.target.parentNode.parentNode);   
+}
+function checkStatus(evt){
+    var check = evt.target.parentNode;
+    if(evt.target.checked){
+        check.style.textDecoration="line-through";
     }else{
-        tarea.style.textDecoration="none";
-        tarea.style.color= "#000";
-        tarea.style.fontWeight="100";
+        check.style.textDecoration="none";
     }
 }
-function deleteText(){
-    var toDelete = this.id.replace("item","")
-		document.getElementById("element" + toDelete).style.display="none";
-}
+
+
