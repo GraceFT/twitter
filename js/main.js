@@ -1,11 +1,12 @@
 var taskList =[]
 function onButtonClick(){
     var element =document.getElementById("tarea").value;
-    taskList.push({text:element,isDone:false});
     if(element===""){
         return false;
     }else{
-      return drawTaskList();}
+    taskList.push({text:element,isDone:false});
+    return drawTaskList();
+    }
 }
 function drawTaskList(){
     var list = document.getElementById("lista");
