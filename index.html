@@ -19,13 +19,15 @@
 <div class="container">
    <div class="row text-center">
     <form action="">       
-        <textarea name="tareas" class="form-control"id="tarea" cols="30" rows="5" placeholder="Añade tu nueva tarea"></textarea>
+        <textarea name="tareas" class="form-control" id="tarea" cols="30" rows="5" placeholder="Añade tu nueva tarea"></textarea>
         <br> 
-        <input type="button" class=" btn button" value="Añadir" id="agregar">
+        <input type="button" class=" btn button" value="Añadir" id="agregar" onclick="onButtonClick()">
     </form>
     </div>  
     <hr>
-     <div id="lista" class="lista"></div>
+    
+     <ul id="lista" class="lista">
+     </ul>
     
  </div>   
 

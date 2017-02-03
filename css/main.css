@@ -1,44 +1,32 @@
-*{
-    
-}
-body{
-    background:url(../img/symphony.png);
-    font-family: "Raleway";
-}
+body{background:url(../img/symphony.png);
+    font-family: "Raleway";}
+.lista{
+    padding: 0;
+    margin: 0;}
 .cabec{
-    background: #25b99a;
-}
-h1{
-    color: #fff;
+    background: #25b99a;}
+h1{color: #fff;
     text-shadow: 1px 1px #ccc;
-    font-family: "Josefin Sans";
-}
+    font-family: "Josefin Sans";}
 .tachito{
     color:#25b99a;
-    float: right;
-    font-size: 25px;
-}
+    float: right;}
 .tachito:hover{
-    color: #fff;
-}
+    color: #fff;}
 .tareas{
     background-color: rgba(37, 185, 154,0.3);
-    padding: 10px;
-    margin: 10px 0;
-    
-}
+    list-style: none;
+    font-weight: bolder;
+    padding: 10px;margin: 10px 0;}
 .button{
   border: 2px solid rgba(37, 185, 154,0.5);
     color: #000;
     font-weight: bold;
-    padding: 10px 20px;
-}
+    padding: 10px 20px;}
 .button:hover{
-    background:#f2f2f2;
-}
-hr{
-    border: 1px solid #25b99a; 
-}
+    background:#f2f2f2;}
+hr{border: 1px solid #25b99a;}
+#check{margin-right:12px;}
 /* latin-ext */
 @font-face {
   font-family: 'Raleway';
